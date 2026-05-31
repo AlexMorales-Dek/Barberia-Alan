@@ -1,0 +1,389 @@
+/* RESET GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f8f8; /* Un gris casi blanco para el fondo */
+    color: #1a1a1a; /* Negro suave para texto */
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, .logo {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+/* NAVBAR CLÁSICO */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    z-index: 1000;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+nav.scrolled {
+    background: #111;
+    padding: 15px 50px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav.scrolled .logo, nav.scrolled .nav-links a {
+    color: #fff;
+}
+
+.logo {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    color: #fff;
+}
+
+.logo span {
+    font-weight: 400;
+    font-style: italic;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #999;
+}
+
+.btn-reserva {
+    background: #fff;
+    color: #111;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    transition: background 0.3s;
+}
+
+.btn-reserva:hover {
+    background: #ccc;
+}
+
+/* PORTADA HERO */
+.hero {
+    height: 100vh;
+    background: url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=1920') no-repeat center center/cover;
+    position: relative;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8));
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+}
+
+.hero-content {
+    max-width: 600px;
+    color: #fff;
+}
+
+.subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    color: #ccc;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.description {
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin-bottom: 40px;
+    color: #ddd;
+}
+
+.btn-solid {
+    display: inline-block;
+    background: #111;
+    color: #fff;
+    padding: 15px 35px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    border: 1px solid #111;
+    transition: all 0.3s;
+}
+
+.btn-solid:hover {
+    background: transparent;
+    color: #fff;
+    border-color: #fff;
+}
+
+/* SECCIONES */
+section {
+    padding: 100px 10%;
+}
+
+.divider {
+    height: 2px;
+    width: 50px;
+    background: #111;
+    margin: 20px 0;
+}
+
+.divider.center {
+    margin: 20px auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-center h2 {
+    font-size: 2.5rem;
+}
+
+/* ACERCA DE */
+.about-section {
+    background: #fff;
+}
+
+.about-grid {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+.about-text p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.features-list {
+    list-style: none;
+}
+
+.features-list li {
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    filter: grayscale(100%);
+    box-shadow: -15px 15px 0px #111;
+}
+
+/* OPINIONES */
+.reviews-section {
+    background: #111;
+    color: #fff;
+}
+
+.reviews-section .divider {
+    background: #fff;
+}
+
+.rating-badge {
+    display: inline-block;
+    border: 1px solid #555;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin-bottom: 50px;
+    color: #ccc;
+}
+
+.reviews-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.review-card {
+    background: #1a1a1a;
+    padding: 30px;
+    border: 1px solid #333;
+}
+
+.stars {
+    color: #fff; /* Estrellas blancas para mantener el look monocromático */
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.review-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-bottom: 20px;
+    color: #ddd;
+}
+
+.author {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #888;
+}
+
+/* UBICACIÓN */
+.location-section {
+    background: #f8f8f8;
+}
+
+.location-grid {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+.map-container {
+    flex: 1;
+}
+
+.map-container img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    filter: grayscale(100%);
+}
+
+.location-info {
+    flex: 1;
+}
+
+.location-info h2 {
+    font-size: 2.2rem;
+}
+
+.info-block {
+    margin-bottom: 25px;
+}
+
+.info-block h3 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.info-block p {
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.btn-outline {
+    display: inline-block;
+    border: 1px solid #111;
+    color: #111;
+    padding: 12px 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    transition: all 0.3s;
+}
+
+.btn-outline:hover {
+    background: #111;
+    color: #fff;
+}
+
+/* FOOTER */
+footer {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+footer h3 {
+    font-size: 1.5rem;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.credits {
+    margin-top: 30px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #444;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    nav {
+        padding: 15px 20px;
+    }
+    .nav-links {
+        display: none;
+    }
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+    .about-grid, .location-grid {
+        flex-direction: column;
+    }
+    .about-image img {
+        box-shadow: -10px 10px 0px #111;
+    }
+}
